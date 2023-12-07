@@ -1,11 +1,10 @@
 import React from "react";
-import styled from "styled-components";
 
 
 const ItemListContainer = ({ greeting }) => {
 
     return (
-        <div className="ItemList">
+        <div className="item-list">
             <h1 className="mensaje">{greeting}</h1>
         </div>
     )
