@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
+import { Box, Text} from "@chakra-ui/react"
 
 const CardWidget = () => {
     const itemCount = 2;
 
     const mostrarNotificacion = () => {
-        alert(`Tienes ${itemCount} items en tu carrito`);
+        alert(`Tienes ${itemCount} productos en tu carrito`);
     };
 
     return (
@@ -23,7 +24,7 @@ const CardWidget = () => {
 
 export default CardWidget
 
-const cartwidget = styled.div`
+const CartWidget = styled.div`
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -36,8 +37,8 @@ const cartwidget = styled.div`
     carticon {
         width: 30px;
         height: 30px; 
-        background-color%;
-        display: flex;: rgb(255, 255, 255);
+        background-color: rgb(255, 255, 255);
+        display: flex;
         border-radius: 50
         justify-content: center;
         align-items: center;

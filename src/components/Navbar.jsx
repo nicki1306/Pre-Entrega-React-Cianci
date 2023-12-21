@@ -1,6 +1,6 @@
 import React from 'react'
 import CardWidget from './CardWidget';
-import bootstrap from 'styled-components';
+import { Box, Text } from '@chakra-ui/react'
 
 
 function Navbar() {
@@ -14,8 +14,8 @@ function Navbar() {
                     <a href="/">Contacto</a>
                     <a href="/">cambios y devoluciones</a>
                 </div>
-                <div className='card'> 
-                <CardWidget/>
+                <div className='card'>
+                    <CardWidget />
                 </div>
             </Navcontainer>
         </>
@@ -24,7 +24,7 @@ function Navbar() {
 
 export default Navbar
 
-const Navcontainer = bootstrap.div`
+const Navcontainer = styled.div`
 position: fixed;
 width: 100%;
 height: 60px;
@@ -86,6 +86,7 @@ a{
     cursor: pointer;
 
 }
+
 card{
     margin-right: 1rem;
     border-radius: 1rem;
@@ -95,7 +96,5 @@ card{
     cursor: pointer;
     transition: all .5s ease;
     background-color: pink;
-
-
-}
+    }
 `
