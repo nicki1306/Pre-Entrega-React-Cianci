@@ -1,37 +1,35 @@
-import React from "react";
-import styled from "styled-components";
+
+import { React, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Pedirdata } from "../info/Pedirdata"
+import ItemList from "./ItemList";
 
 
 const ItemListContainer = ({ greeting }) => {
 
+    const [Productos, setProductos] = useState([])
+    const {categoria} = useParams()
+
+    useEffect(() => {
+        Pedirdata()
+            .then((res) => {
+                if (categoria){
+                    setProductos(res.filter( (prod) => prod.categoria === categoria) );
+                }else{
+                    setProductos(res);
+                }
+            })
+            .catch((error) => {
+                console.error("error al obtener datos", error)
+            })
+    },[categoria]  )
     return (
-        <div className="itemList">
-            <h1 className="mensaje">{greeting}</h1>
+        <div>
+            <h1 className="msj">{greeting}</h1>
+            <ItemList productos={Productos} />
         </div>
     )
 }
 
 export default ItemListContainer
 
-const ItemList = styled.div`
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
-margin: 0;
-padding: 0;
-list-style: none;
-gap: 20px;
-margin-bottom: 20px;
-
-mensaje {
-        font-size: 30px;
-        text-align: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        color: "pink";
-        font-weight: bold;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-    }
-}
-`

@@ -1,8 +1,6 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  width: 100%;
 }
 
 .logo {
@@ -39,4 +37,26 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.navbar{
+  background-color: rgba(0, 0, 0, 0.934);
+  color: azure;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+}
+
+.heading{
+  margin-left: 1rem;
+}
+
+.msj{
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  font-size: 50px;
 }

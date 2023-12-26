@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Box, Text} from "@chakra-ui/react"
+import { Box, Text, Icon} from "@chakra-ui/react"
+import { HamburgerIcon } from '@chakra-ui/icons';
 
 const CardWidget = () => {
     const itemCount = 2;
@@ -10,39 +10,31 @@ const CardWidget = () => {
     };
 
     return (
-        <div className="cart-widget" onClick={mostrarNotificacion}>
-            <div className="carticon">
-            </div>
-            {itemCount > 0 && (
-                <div className="notification-badge" id="notification-badge">
-                    {itemCount}
-                </div>
-            )}
-        </div>
+        <Box
+        className="cart-widget"
+        onClick={mostrarNotificacion}
+        display="flex"
+        alignItems="center"
+        cursor="pointer"
+    >
+        <Icon as={HamburgerIcon} boxSize={6} color="gray.500" />
+        {itemCount > 0 && (
+            <Box
+                className="notification-badge"
+                id="notification-badge"
+                ml={2}
+                borderRadius="full"
+                bg="red.500"
+                color="white"
+                fontSize="sm"
+                px={2}
+                py={1}
+            >
+                {itemCount}
+            </Box>
+        )}
+    </Box>
     );
 };
 
 export default CardWidget
-
-const CartWidget = styled.div`
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: pink;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-
-    carticon {
-        width: 30px;
-        height: 30px; 
-        background-color: rgb(255, 255, 255);
-        display: flex;
-        border-radius: 50
-        justify-content: center;
-        align-items: center;
-        
-    }
-`
-
