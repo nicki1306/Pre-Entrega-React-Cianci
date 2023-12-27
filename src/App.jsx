@@ -5,6 +5,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import Navbar from "./components/Navbar";
 import ItemDetail from "./components/ItemDetail";
 import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/itemDetailcontainer";
 
 
 const App = () => {
@@ -12,12 +13,11 @@ const App = () => {
   return (
     <BrowserRouter>
     <Navbar />  
-    <ItemDetail/>
-    <ItemListContainer />
     <Routes>
       <Route exact path="/" element={<ItemListContainer />} />
       <Route path="/item/:id" element={<ItemDetail />} />
-      <Route path="/category/:categoria" element={<ItemListContainer />} />
+      <Route path="/ItemDetailContainer" element={<ItemDetailContainer />} />
+      <Route path="/productos/" element={<ItemListContainer />} />
     </Routes>
   </BrowserRouter>
 )
