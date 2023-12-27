@@ -6,12 +6,15 @@ import { Box, Heading, Stack, Link, Spacer, Select } from '@chakra-ui/react'
 function Navbar({ onCategoryChange }) {
 
     const [categorias, setCategorias] = useState(['Todos', 'Buzos', 'Remeras', 'Medias', 'Pantalones']);
-    const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todos');
+    //const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todos');
+    //setCategoriaSeleccionada("Buzos")
 
     const handleCategoriaChange = (categoria) => {
-        categoria = categoria.toLowerCase();
-        setCategoriaSeleccionada(categoria);
+        if (categoria === 'Todos') categoria =''
         onCategoryChange(categoria);
+
+        categoria = categoria.toLowerCase();
+        //setCategoriaSeleccionada(categoria);
     };
 
     return (
@@ -31,7 +34,7 @@ function Navbar({ onCategoryChange }) {
             <Spacer />
             <Box className='categorias'>
                 <Select 
-                value={categoriaSeleccionada}
+                //value={categoriaSeleccionada}
                 onChange={(e) => handleCategoriaChange(e.target.value)}>
 
                     {categorias.map((categoria) => (
