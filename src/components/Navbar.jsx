@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import CardWidget from './CardWidget';
-import { Box, Heading, Stack, Flex, Link, Spacer, Select } from '@chakra-ui/react'
+import { Box, Heading, Stack, Link, Spacer, Select } from '@chakra-ui/react'
 
 
 function Navbar({ onCategoriaChange }) {
@@ -21,14 +21,14 @@ function Navbar({ onCategoriaChange }) {
                 </Heading>
             </Box>
             <Spacer />
-            <Box>
+            <Box className='links'>
                 <Link href="/">Home</Link>
                 <Link href="/">Sobre Nosotros</Link>
                 <Link href="/">Contacto</Link>
                 <Link href="/">Cambios y Devoluciones</Link>
             </Box>
             <Spacer />
-            <Box>
+            <Box className='categorias'>
                 <Select onChange={(e) => onCategoriaChange(e.target.value)}>
                     {categorias.map((categoria) => (
                         <option key={categoria} value={categoria}>

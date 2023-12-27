@@ -53,6 +53,29 @@
   font-size: 2rem;
 }
 
+.links{
+  justify-content: space-between;
+  font-size: small;
+  margin-right: 1rem;
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  align-items: center;
+  text-decoration: none;
+}
+
+.categorias{
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  align-items: center;
+  text-decoration: none;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  font-weight: bold;
+  font-size: 15px;
+}
+
 .msj{
   margin-left: 1rem;
   margin-top: 1rem;
