@@ -1,11 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import "./App.css";
-import { ChakraProvider } from '@chakra-ui/react'
 import Navbar from "./components/Navbar";
-import ItemDetail from "./components/ItemDetail";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/itemDetailcontainer";
+import Cart from "./components/cart";
 
 
 const App = () => {
@@ -15,9 +14,9 @@ const App = () => {
     <Navbar />  
     <Routes>
       <Route exact path="/" element={<ItemListContainer />} />
-      <Route path="/item/:id" element={<ItemDetail />} />
-      <Route path="/ItemDetailContainer" element={<ItemDetailContainer />} />
-      <Route path="/productos/" element={<ItemListContainer />} />
+      <Route path="/category/:categoryid" element={<ItemListContainer />} />
+      <Route path="/producto/:id" element={<ItemDetailContainer />} />
+      <Route path="/cart" element={<Cart/>} />
     </Routes>
   </BrowserRouter>
 )
