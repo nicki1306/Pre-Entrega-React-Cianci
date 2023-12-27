@@ -3,14 +3,15 @@ import CardWidget from './CardWidget';
 import { Box, Heading, Stack, Link, Spacer, Select } from '@chakra-ui/react'
 
 
-function Navbar({ onCategoriaChange }) {
+function Navbar({ onCategoryChange }) {
 
-    const [categorias, setCategorias] = useState(['Todos', 'Electrónicos', 'Ropa', 'Otras Categorías']);
+    const [categorias, setCategorias] = useState(['Todos', 'Buzos', 'Remeras', 'Medias', 'Pantalones']);
     const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todos');
 
     const handleCategoriaChange = (categoria) => {
+        categoria = categoria.toLowerCase();
         setCategoriaSeleccionada(categoria);
-        onCategoriaChange(categoria);
+        onCategoryChange(categoria);
     };
 
     return (
@@ -29,7 +30,10 @@ function Navbar({ onCategoriaChange }) {
             </Box>
             <Spacer />
             <Box className='categorias'>
-                <Select onChange={(e) => onCategoriaChange(e.target.value)}>
+                <Select 
+                value={categoriaSeleccionada}
+                onChange={(e) => handleCategoriaChange(e.target.value)}>
+
                     {categorias.map((categoria) => (
                         <option key={categoria} value={categoria}>
                             {categoria}

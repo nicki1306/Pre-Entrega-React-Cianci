@@ -1,28 +1,26 @@
 
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { Pedirdata } from "../info/Pedirdata"
 import ItemList from "./ItemList";
 import Navbar from "./Navbar";
 
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = ({ greeting, category }) => {
 
     const [productos, setProductos] = useState([])
-    const { categoriaId } = useParams()
 
     useEffect(() => {
         Pedirdata()
             .then((res) => {
-                const productosFiltrados = categoriaId
-                    ? res.filter((prod) => prod.categoria === categoriaId)
+                const productosFiltrados = category
+                    ? res.filter((prod) => prod.categoria === category)
                     : res;
                 setProductos(productosFiltrados);
             })
             .catch((error) => {
                 console.error("Error al obtener datos", error);
             });
-    }, [categoriaId]);
+    }, [category]);
     return (
         <div>
             <h1 className="msj">{greeting}</h1>
