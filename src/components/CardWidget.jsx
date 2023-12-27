@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Text, Icon} from "@chakra-ui/react"
 import { HamburgerIcon } from '@chakra-ui/icons';
 
 const CardWidget = () => {
-    const itemCount = 2;
+    const [contador, setContador] = useState(0);
 
     const mostrarNotificacion = () => {
-        alert(`Tienes ${itemCount} productos en tu carrito`);
+        alert(`Tienes ${contador} productos en tu carrito`);
     };
 
     return (
@@ -18,7 +18,7 @@ const CardWidget = () => {
         cursor="pointer"
     >
         <Icon as={HamburgerIcon} boxSize={6} color="gray.500" />
-        {itemCount > 0 && (
+        {contador > 0 && (
             <Box
                 className="notification-badge"
                 id="notification-badge"
@@ -30,7 +30,7 @@ const CardWidget = () => {
                 px={2}
                 py={1}
             >
-                {itemCount}
+                {contador}
             </Box>
         )}
     </Box>

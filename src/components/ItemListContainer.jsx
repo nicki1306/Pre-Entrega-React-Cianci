@@ -8,21 +8,21 @@ import ItemList from "./ItemList";
 const ItemListContainer = ({ greeting }) => {
 
     const [Productos, setProductos] = useState([])
-    const {categoria} = useParams()
+    const { categoria } = useParams()
 
     useEffect(() => {
         Pedirdata()
             .then((res) => {
-                if (categoria){
-                    setProductos(res.filter( (prod) => prod.categoria === categoria) );
-                }else{
+                if (categoria) {
+                    setProductos(res.filter((prod) => prod.categoria === categoria));
+                } else {
                     setProductos(res);
                 }
             })
             .catch((error) => {
                 console.error("error al obtener datos", error)
             })
-    },[categoria]  )
+    }, [categoria])
     return (
         <div>
             <h1 className="msj">{greeting}</h1>

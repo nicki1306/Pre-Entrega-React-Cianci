@@ -8,9 +8,3 @@ export const Pedirdata = () => {
         })
     })
 }
-
-export const Pedirdata = (id) => {
-    return new Promise((resolve, reject)) => {
-        const item = data.find(())
-    }
-}
