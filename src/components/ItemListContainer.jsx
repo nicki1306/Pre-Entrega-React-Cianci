@@ -1,8 +1,9 @@
 
-import { React, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Pedirdata } from "../info/Pedirdata"
 import ItemList from "./ItemList";
+import Navbar from "./Navbar";
 
 
 const ItemListContainer = ({ greeting }) => {
@@ -13,16 +14,15 @@ const ItemListContainer = ({ greeting }) => {
     useEffect(() => {
         Pedirdata()
             .then((res) => {
-                if (categoriaId) {
-                    setProductos(res.filter((prod) => prod.categoria === categoriaId));
-                } else {
-                    setProductos(res);
-                }
+                const productosFiltrados = categoriaId
+                    ? res.filter((prod) => prod.categoria === categoriaId)
+                    : res;
+                setProductos(productosFiltrados);
             })
             .catch((error) => {
-                console.error("error al obtener datos", error)
-            })
-    }, [categoriaId])
+                console.error("Error al obtener datos", error);
+            });
+    }, [categoriaId]);
     return (
         <div>
             <h1 className="msj">{greeting}</h1>
