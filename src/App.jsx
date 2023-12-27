@@ -19,7 +19,7 @@ const App = () => {
     <BrowserRouter>
     <Navbar onCategoriaChange={handleCategoriaChange}/>  
     <Routes>
-      <Route exact path="/" element={<ItemListContainer category={categoryValue} />} />
+      <Route exact path="/" element={<ItemListContainer />} />
       <Route path="/category/:categoryid" element={<ItemListContainer />} />
       <Route path="/producto/:id" element={<ItemDetailContainer />} />
       <Route path="/cart" element={<Cart/>} />
