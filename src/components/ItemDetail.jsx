@@ -1,23 +1,24 @@
 import { useState } from "react";
 import ItemCount from "./ItemCount"
+import {toCapital} from "../info/toCapital"
 
 
 
 
-const ItemDetail = ({ item }) => {
-    if(!item){
-        return <h1>Cargando...</h1>
-    }
+const ItemDetail = ({ item, agregarAlCarrito}) => {
+
+    if (!item) {
+        return <div>Cargando producto</div>
+}
 
     const [cantidad, setCantidad] = useState(1);
-
     const handleRestar = () => {
         cantidad > 1 && setCantidad(cantidad - 1)
-    }
+    };
 
     const handleSumar = () => {
         cantidad < item.stock && setCantidad(cantidad + 1)
-    }
+    };
 
     return (
         <div className="container">

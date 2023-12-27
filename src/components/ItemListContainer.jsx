@@ -7,7 +7,7 @@ import ItemList from "./ItemList";
 
 const ItemListContainer = ({ greeting }) => {
 
-    const [Productos, setProductos] = useState([])
+    const [productos, setProductos] = useState([])
     const { categoria } = useParams()
 
     useEffect(() => {
@@ -26,7 +26,7 @@ const ItemListContainer = ({ greeting }) => {
     return (
         <div>
             <h1 className="msj">{greeting}</h1>
-            <ItemList productos={Productos} />
+            <ItemList productos={productos} />
         </div>
     )
 }
