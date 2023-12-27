@@ -20,7 +20,7 @@ const Item = ({ producto }) => {
                 <Divider />
                 <CardFooter>
                     <Button variant='solid' colorScheme='blue'>
-                        <Link to={`/item/${producto.id}`}>ver mas</Link>
+                        <Link to={`/producto/${producto.id}`}>ver mas</Link>
                     </Button>
                 </CardFooter>
             </Card>
