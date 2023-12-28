@@ -76,6 +76,17 @@
   font-size: 15px;
 }
 
+.desplegable{
+  color: rgb(186, 182, 182);
+  display: flex;
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
 .msj{
   margin-left: 1rem;
   margin-top: 1rem;

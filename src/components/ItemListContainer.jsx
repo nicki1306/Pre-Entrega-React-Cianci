@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Pedirdata } from "../info/Pedirdata"
 import ItemList from "./ItemList";
-import Navbar from "./Navbar";
+
 
 
 const ItemListContainer = ({ greeting, category }) => {

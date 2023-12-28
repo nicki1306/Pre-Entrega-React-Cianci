@@ -33,10 +33,9 @@ function Navbar({ onCategoryChange }) {
             </Box>
             <Spacer />
             <Box className='categorias'>
-                <Select 
+                <Select className='desplegable'
                 value={categoriaSeleccionada}
-                onChange={(e) => handleCategoriaChange(e.target.value)}>
-
+                onChange={(e) => handleCategoriaChange(e.target.value.toLowerCase())}>
                     {categorias.map((categoria) => (
                         <option key={categoria} value={categoria}>
                             {categoria}
