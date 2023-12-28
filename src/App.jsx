@@ -17,7 +17,7 @@ const App = () => {
   
   return (
     <BrowserRouter>
-    <Navbar onCategoriaChange={handleCategoriaChange}/>  
+    <Navbar onCategoryChange={handleCategoriaChange}/>  
     <Routes>
       <Route exact path="/" element={<ItemListContainer category={categoryValue} />} />
       <Route path="/category/:categoryid" element={<ItemListContainer />} />
