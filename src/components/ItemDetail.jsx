@@ -8,7 +8,7 @@ import { CartContext } from "../context/CartContext"
 
 const ItemDetail = ({ item, agregaralcarrito }) => {
 
-    const { carrito} = useContext(CartContext);
+    const { carrito } = useContext(CartContext);
 
     const [cantidad, setCantidad] = useState(1);
     const handleRestar = () => {
@@ -32,7 +32,8 @@ const ItemDetail = ({ item, agregaralcarrito }) => {
                         cantidad={cantidad}
                         handleSumar={handleSumar}
                         handleRestar={handleRestar}
-                        handleAgregar={() => { AgregarAlCarrito(item, cantidad) }}
+                        handleAgregar={() => { 
+                            agregaralcarrito(item, cantidad) }}
                     />
                 </div>
             </div>
