@@ -6,9 +6,9 @@ import { CartContext } from "../context/CartContext"
 
 
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ item, agregaralcarrito }) => {
 
-    const { carrito, AgregarAlCarrito } = useContext(CartContext);
+    const { carrito} = useContext(CartContext);
 
     const [cantidad, setCantidad] = useState(1);
     const handleRestar = () => {
