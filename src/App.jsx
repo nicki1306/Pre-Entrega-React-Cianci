@@ -17,12 +17,13 @@ const App = () => {
     setCategoryValue(value);
   };
 
-   const carritoInicial ={
-    carrito: []
-   }
+  const carritoInicial = [
+    
+  ]
+  
 
   return (
-    <CartContext.Provider value={carritoInicial}> 
+    <CartContext.Provider value={carritoInicial}>
       <BrowserRouter>
         <Navbar onCategoryChange={handleCategoriaChange} />
         <Routes>
@@ -31,7 +32,6 @@ const App = () => {
           <Route path="/producto/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
-
         </Routes>
       </BrowserRouter>
     </CartContext.Provider>

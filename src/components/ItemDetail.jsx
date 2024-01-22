@@ -4,9 +4,8 @@ import { toCapital } from "../info/toCapital"
 import { CartContext } from "../context/CartContext"
 
 
-
-
 const ItemDetail = ({ item, agregaralcarrito }) => {
+    console.log(agregaralcarrito)
 
     const { carrito } = useContext(CartContext);
 
@@ -18,6 +17,10 @@ const ItemDetail = ({ item, agregaralcarrito }) => {
     const handleSumar = () => {
         cantidad < item.stock && setCantidad(cantidad + 1)
     };
+
+    const handleAgregar = () => {
+        agregaralcarrito(item, cantidad)
+    }
 
     return (
         <div className="container">
@@ -32,8 +35,7 @@ const ItemDetail = ({ item, agregaralcarrito }) => {
                         cantidad={cantidad}
                         handleSumar={handleSumar}
                         handleRestar={handleRestar}
-                        handleAgregar={() => { 
-                            agregaralcarrito(item, cantidad) }}
+                        handleAgregar={handleAgregar}
                     />
                 </div>
             </div>

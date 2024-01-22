@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { pedirItemPorId } from '../info/Pedirdata'
 import ItemDetail from './ItemDetail'
+import { CartContext } from '../context/CartContext'
 
 const ItemDetailContainer = () => {
 
     const [item, setItem] = useState(null)
     const { id } = useParams()
+    const {agregaralcarrito} = useContext(CartContext)
+
 
     useEffect(() => {
         pedirItemPorId(Number(id))
@@ -20,7 +23,7 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
-            {item && <ItemDetail item={item} />}
+            {item && <ItemDetail item={item} agregaralcarrito={agregaralcarrito} />}
         </div>
     )
 }
