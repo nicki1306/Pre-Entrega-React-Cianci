@@ -95,3 +95,79 @@
   font-weight: bold;
   font-size: 50px;
 }
+
+.agregar-al-carrito{
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: rgba(5, 84, 118, 0.934);
+  color: azure;
+  border: 2px solid azure;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.item-count{
+  gap: 1rem;
+  list-style: none;
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 15px;
+}
+
+.main-title{
+  font-weight: bold;
+  font-size: 50px;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.producto-detalle{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 15px;
+}
+
+.formulario{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 15px;
+}
