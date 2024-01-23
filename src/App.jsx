@@ -4,8 +4,8 @@ import "./App.css";
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import ItemListContainer from "./components/ItemListContainer";
-import ItemDetailContainer from "./components/itemDetailcontainer";
-import Cart from "./components/cart";
+import ItemDetailContainer from "../src/components/ItemDetailContainer";
+import Cart from "../src/components/Cart";
 import Checkout from "./components/Checkout"
 import { CartProvider } from "./context/CartContext"
 
