@@ -1,40 +1,24 @@
-import React, { useState } from 'react';
-import { Box, Text, Icon} from "@chakra-ui/react"
+import React, { useState, useContext } from 'react';
+import { Icon } from "@chakra-ui/react"
 import { HamburgerIcon } from '@chakra-ui/icons';
+import { Link } from 'react-router-dom';
+import { CartContext } from '../context/CartContext';
 
 const CardWidget = () => {
     const [contador, setContador] = useState(0);
 
-    const mostrarNotificacion = () => {
-        alert(`Tienes ${contador} productos en tu carrito`);
-    };
+    const carritoInicial = JSON.parse(localStorage.getItem("carrito")) || [];
+    console.log(carritoInicial)
 
     return (
-        <Box
-        className="cart-widget"
-        onClick={mostrarNotificacion}
-        display="flex"
-        alignItems="center"
-        cursor="pointer"
-    >
-        <Icon as={HamburgerIcon} boxSize={6} color="gray.500" />
-        {contador > 0 && (
-            <Box
-                className="notification-badge"
-                id="notification-badge"
-                ml={2}
-                borderRadius="full"
-                bg="red.500"
-                color="white"
-                fontSize="sm"
-                px={2}
-                py={1}
-            >
-                {contador}
-            </Box>
-        )}
-    </Box>
-    );
-};
+        <Link to="/cart">
+            <Icon as={HamburgerIcon} boxSize={6} color="gray.500" />
+            <span>{carritoInicial.length}</span>
+        </Link>
+
+
+    )
+}
+
 
 export default CardWidget

@@ -6,7 +6,7 @@ const Item = ({ producto }) => {
     return (
         <div>
             <Card>
-                <CardBody>
+                <CardBody className='producto-detalle'> 
                     <Stack mt='6' spacing='3'>
                         <Heading size='md'>{producto.titulo}</Heading>
                         <Text>

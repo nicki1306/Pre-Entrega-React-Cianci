@@ -20,6 +20,7 @@ export const CartProvider = ({ children }) => {
             nuevoCarrito.push(itemAgregado);
         }
         setCarrito(nuevoCarrito);
+        window.location = "/cart"
     };
 
     const cantidadEnCarrito = () => {
