@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import {coleccion, getDocs, getFirestore} from 'firebase/firestore/lite'
+import {coleccion, getDocs, getFirestore} from 'firebase/firestore'
 
 const coleccion = () => {
     const [productos, setproductos] = useState([])

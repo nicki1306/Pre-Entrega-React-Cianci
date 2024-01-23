@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemDetail from './ItemDetail'
 import { CartContext } from '../context/CartContext'
-import { doc, getDoc } from "firebase/firestore/lite"
+import { doc, getDoc } from "firebase/firestore"
 import { db } from "../firebase/config"
 
 
@@ -12,7 +12,6 @@ const ItemDetailContainer = () => {
     const { id } = useParams()
     const { agregaralcarrito } = useContext(CartContext)
 
-    console.log("item detail container:", agregaralcarrito)
 
 
     useEffect(() => {

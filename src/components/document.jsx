@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { doc, getDocs, getFirestore } from 'firebase/firestore/lite'
+import { doc, getDocs, getFirestore } from 'firebase/firestore'
 
 const document = () => {
     const [productos, setproductos] = useState([])
