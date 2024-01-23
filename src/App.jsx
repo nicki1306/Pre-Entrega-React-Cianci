@@ -7,7 +7,8 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/itemDetailcontainer";
 import Cart from "./components/cart";
 import Checkout from "./components/Checkout"
-import { CartContext } from "./context/CartContext";
+import { CartProvider } from "./context/CartContext"
+
 
 
 const App = () => {
@@ -17,13 +18,11 @@ const App = () => {
     setCategoryValue(value);
   };
 
-  const carritoInicial = [
-    
-  ]
+  const carritoInicial = []
   
 
   return (
-    <CartContext.Provider value={carritoInicial}>
+    <CartProvider>
       <BrowserRouter>
         <Navbar onCategoryChange={handleCategoriaChange} />
         <Routes>
@@ -34,7 +33,7 @@ const App = () => {
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>
-    </CartContext.Provider>
+</CartProvider>
   )
 }
 

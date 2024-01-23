@@ -1,25 +1,30 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom'
-import { pedirItemPorId } from '../info/Pedirdata'
 import ItemDetail from './ItemDetail'
 import { CartContext } from '../context/CartContext'
+import { doc, getDoc } from "firebase/firestore/lite"
+import { db } from "../firebase/config"
+
 
 const ItemDetailContainer = () => {
 
     const [item, setItem] = useState(null)
     const { id } = useParams()
-    const {agregaralcarrito} = useContext(CartContext)
+    const { agregaralcarrito } = useContext(CartContext)
+
+    console.log("item detail container:", agregaralcarrito)
 
 
     useEffect(() => {
-        pedirItemPorId(Number(id))
-            .then((res) => {
-                setItem(res);
+        const docRef = doc(db, "productos", id);
+        getDoc(docRef)
+            .then((resp) => {
+                setItem(
+                    { ...resp.data(), id: resp.id }
+                );
             })
-            .catch((error) => {
-                console.error(error)
-            })
-    }, [id]);
+
+    }, [id])
 
     return (
         <div>
