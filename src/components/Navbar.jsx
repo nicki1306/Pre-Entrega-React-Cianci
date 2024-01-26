@@ -7,7 +7,6 @@ function Navbar({ onCategoryChange }) {
 
     const [categorias, setCategorias] = useState(['Todos', 'Buzos', 'Remeras', 'Medias', 'Pantalones']);
     const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todos');
-    //setCategoriaSeleccionada("Buzos")
 
     const handleCategoriaChange = (categoria) => {
         if (categoria === 'Todos') categoria =''
@@ -39,6 +38,7 @@ function Navbar({ onCategoryChange }) {
                 onChange={(e) => handleCategoriaChange(e.target.value)}>
                     {categorias.map((categoria) => (
                         <option key={categoria} value={categoria}>
+                            {categoria}
                         </option>
                     ))}
                 </Select>

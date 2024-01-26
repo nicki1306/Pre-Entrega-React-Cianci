@@ -34,9 +34,6 @@ const ItemListContainer = ({greeting, category}) => {
 
     return (
         <div>
-                            <Link to="/productos/medias">
-                            {"categoria"}
-                            </Link>
             <ItemList productos={productos} titulo={titulo} />
         </div>
     )
