@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import { Icon } from "@chakra-ui/react"
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../context/CartContext';
 
 const CardWidget = () => {
     const [contador, setContador] = useState(0);

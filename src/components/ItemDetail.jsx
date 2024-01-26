@@ -1,5 +1,8 @@
 import { useState, useContext } from "react";
 import ItemCount from "./ItemCount"
+import ItemQuantitySelector from "./ItemQuantitySelector";
+import Description from "./Description";
+import AddItemButton from "./AddItemButton";
 import { toCapital } from "../info/toCapital"
 import { CartContext } from "../context/CartContext"
 
@@ -24,19 +27,21 @@ const ItemDetail = ({ item }) => {
                 <img src={item.imagen} alt={item.titulo} />
                 <div>
                     <h3 className="titulo">{item.titulo}</h3>
-                    <p className="descripcion">{item.descripcion}</p>
-                    <p className="categoria">Categoría: {toCapital(item.categoria)}</p>
+                    <Description descripcion={item.descripcion} />
+                    <p className="categoria">Categoria: {toCapital(item.categoria)}</p>
                     <p className="precio">${item.precio}</p>
-                    <ItemCount
+                    <ItemQuantitySelector
                         cantidad={cantidad}
                         handleSumar={handleSumar}
                         handleRestar={handleRestar}
-                        handleAgregar={() => { agregaralcarrito(item, cantidad)} }
+                    />
+                    <AddItemButton
+                        agregaralcarrito={() => agregaralcarrito(item, cantidad)}
                     />
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default ItemDetail

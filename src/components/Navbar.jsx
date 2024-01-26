@@ -11,10 +11,10 @@ function Navbar({ onCategoryChange }) {
 
     const handleCategoriaChange = (categoria) => {
         if (categoria === 'Todos') categoria =''
-        onCategoryChange(categoria);
+        onCategoryChange(categoria.toLowerCase());
 
         categoria = categoria.toLowerCase();
-        setCategoriaSeleccionada(categoria);
+        setCategoriaSeleccionada(categoria.toLowerCase());
     };
 
     return (
@@ -32,8 +32,8 @@ function Navbar({ onCategoryChange }) {
                 <Link href="/">Cambios y Devoluciones</Link>
             </Box>
             <Spacer />
-            <Box className='categorias'>
-                <Select className='desplegable'
+            <Box>
+                <Select  placeholder='Categorias' bg="black" borderColor="white"
                 value={categoriaSeleccionada}
                 onChange={(e) => handleCategoriaChange(e.target.value.toLowerCase())}>
                     {categorias.map((categoria) => (
