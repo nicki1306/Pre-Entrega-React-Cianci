@@ -7,7 +7,6 @@ const CardWidget = () => {
     const [contador, setContador] = useState(0);
 
     const carritoInicial = JSON.parse(localStorage.getItem("carrito")) || [];
-    console.log(carritoInicial)
 
     return (
         <Link to="/cart">

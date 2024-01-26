@@ -3,7 +3,7 @@ import { toCapital } from "../info/toCapital";
 
 
 const ItemList = ({ productos, titulo }) => {
-
+    console.log("productosrf:", productos);
     return (
         <div className="container">
             <h2 className="main-title">{toCapital(titulo)}</h2>

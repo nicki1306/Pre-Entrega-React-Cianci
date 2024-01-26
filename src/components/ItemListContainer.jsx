@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "../firebase/config"
 
 
-const ItemListContainer = () => {
+const ItemListContainer = ({greeting, category}) => {
 
     const [productos, setProductos] = useState([]);
 
@@ -14,11 +15,11 @@ const ItemListContainer = () => {
     const categoria = useParams().categoria;
 
     useEffect(() => {
-        console.log("Categoría actual:", categoria);
-
+        
         const productosRef = collection(db, "productos");
+    
         const q = categoria ? query(productosRef, where("categoria", "==", categoria.toLowerCase())) : productosRef;
-
+        
         getDocs(q)
             .then((resp) => {
                 setProductos(
@@ -27,12 +28,15 @@ const ItemListContainer = () => {
                     })
                 )
             })
-
+            
     }, [categoria])
 
 
     return (
         <div>
+                            <Link to="/productos/medias">
+                            {"categoria"}
+                            </Link>
             <ItemList productos={productos} titulo={titulo} />
         </div>
     )
