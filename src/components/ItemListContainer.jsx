@@ -5,20 +5,17 @@ import { collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "../firebase/config"
 
 
-const ItemListContainer = () => {
+const ItemListContainer = ({category}) => {
 
     const [productos, setProductos] = useState([]);
-
+    console.log("Categoría en ItemListContainer:", category);
     const [titulo, setTitulo] = useState("Productos");
-
-    const {categoria}  = useParams();
 
     useEffect(() => {
         
         const productosRef = collection(db, "productos");
-    
-        const categoriaFilter = categoria
-        const q = categoria ? query(productosRef, categoriaFilter, where("categoria", "==", categoria.toLowerCase())) : productosRef;
+        const q = category ? query(productosRef, where("categoria", "==", category.toLowerCase())) : productosRef;
+
         getDocs(q)
             .then((resp) => {
                 setProductos(
@@ -28,7 +25,7 @@ const ItemListContainer = () => {
                 )
             })
             
-    }, [categoria])
+    }, [category])
 
 
     return (

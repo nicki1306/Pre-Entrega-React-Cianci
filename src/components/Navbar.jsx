@@ -10,10 +10,9 @@ function Navbar({ onCategoryChange }) {
 
     const handleCategoriaChange = (categoria) => {
         if (categoria === 'Todos') categoria =''
-        onCategoryChange(categoria.toLowerCase());
+        onCategoryChange(categoria);
         console.log("categorias", categoria)
 
-        categoria = categoria.toLowerCase();
         setCategoriaSeleccionada(categoria);
     };
 

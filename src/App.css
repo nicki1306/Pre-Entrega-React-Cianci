@@ -132,8 +132,11 @@
   gap: 2rem;
 }
 
-.producto-detalle img {
+.image{
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 
 .producto-detalle-info h3 {
